@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.code{
+    font-size: 30px;
+    color:dimgrey;
+}
+.container{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.clock{
+    position: relative;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(47, 47, 49);
+    box-shadow: 0 2px 2px 2px rgb(211, 208, 208);
+} 
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #000;
+    border: 3px solid #d4d5e0;
+    border-radius: 50%;
+    z-index: 10000;
+}
+.clock span{
+    position: absolute;
+    inset:15px ;
+    text-align: center;
+    transform: rotate(calc(30deg * var(--i)))
+}
+.clock span b{
+    font-size: 2rem;
+    opacity: 0.70;
+    font-weight: 300;
+    display: inline-block;
+    transform: rotate(calc(-30deg * var(--i)));
+}
+.circle{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 1px solid grey;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 10;
+} 
+.circle2{
+    width: 150px;
+    height: 150px;
+    z-index: 9;
+}
+.circle3{
+    width: 100px;
+    height: 100px;
+    z-index: 8;
+}
+.circle i{
+    position: absolute;
+    width: 6px;
+    height: 50%;
+    background: var(--clr);
+    opacity: 0.75;
+    transform-origin: bottom;
+    transform: scaleY(0.9);
+}
+.circle:nth-child(1) i{
+    width: 2px;
+}
+.circle:nth-child(2) i{
+    width: 4px;
+}
+.circle::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--clr);
+    box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr);
+    
+}
+
+/* .clock span{
+    position: absolute;
+    inset: 15px;
+    color: white;
+    text-align: center;
+    transform: rotate(calc(30deg * var(--i))) ;
+} */
+/* .clock span b{
+    display: inline-block;
+    transform: rotate(calc(-30deg * var(--i)));
+} */
